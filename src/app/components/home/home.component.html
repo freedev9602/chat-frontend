@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="chat-container">
+  <div class="chat">
+    <div class="contact bar">
+      <img src="" alt="user">
+      <div class="name">
+        Juan Doe
+      </div>
+    </div>
+    <div class="messages" id="chat">
+      <div class="message {{true ? 'me' : 'others'}}">
+        <span class="user-name">Juan Doe</span> Hola
+        <em *ngIf="true" class="more-info"  (click)="op.toggle($event)">...</em>
+        <div class="card-end">
+          <p-overlayPanel #op>
+              <ng-template pTemplate="content">
+                <em class="pi pi-trash" style="cursor: pointer;"></em>
+              </ng-template>
+          </p-overlayPanel>
+      </div>
+      </div>
+      <div class="message stark" *ngIf="showTyping">
+        <div class="typing typing-1"></div>
+        <div class="typing typing-2"></div>
+        <div class="typing typing-3"></div>
+      </div>
+    </div>
+    <div class="input">
+      <input
+        placeholder="Escribe un mensaje"
+        type="text"
+      />
+    </div>
+  </div>
+  </div>
+<app-footer></app-footer>
